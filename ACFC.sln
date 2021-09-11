@@ -1,0 +1,111 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TEst", "TEst\TEst.csproj", "{31703772-CA77-4099-952C-3E9B121899B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWeb", "TestWeb\TestWeb.csproj", "{120BD0FA-B0BC-4825-83AE-207E6773641D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlipFinder", "SlipFinder\SlipFinder.csproj", "{6885BA53-BC64-495D-B4DA-97D610DBE0D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Recruitment", "Recruitment\Recruitment.csproj", "{B2B1DA74-A7EF-4A93-98A4-C7F2971AEBC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PurchaseOrder", "PurchaseOrder\PurchaseOrder.csproj", "{71094A90-AA14-42A8-8FFA-8DA0FA0EC635}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CottonOnAPI", "CottonOnAPI\CottonOnAPI.csproj", "{77E5A43D-7428-43A5-A312-62B2D4D070F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COGInterfaceApp", "COGInterfaceApp\COGInterfaceApp.csproj", "{4CCFB5D9-6D88-45A0-A79D-752824408646}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COGInterfaceCommand", "COGInterfaceCommand\COGInterfaceCommand.csproj", "{72EF850C-8EF5-4DAF-B9C3-936B9AE01C8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PORequest", "PORequest\PORequest.csproj", "{7EBD452C-9C67-4102-97D4-03688C8B1E74}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CandidatePoolAPI", "CandidatePoolAPI\CandidatePoolAPI.csproj", "{C6A338F5-0A7C-4C04-8243-EAC304986B9D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CandidatePoolWeb", "CandidatePoolWeb\CandidatePoolWeb.csproj", "{0E93454F-4001-4F44-A9FA-790FA17E209C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACFCPrismAPI", "ACFCPrismAPI\ACFCPrismAPI.csproj", "{980FB7AE-53F5-4154-87AC-4C4ECA9CC9FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfologCostHelper", "InfologCostHelper\InfologCostHelper.csproj", "{3AE43598-7F51-47F8-82BE-4C0A2D19B5A0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CRMAPI", "CRMAPI\CRMAPI.csproj", "{71D4AF16-0835-4F44-BC72-7CEBA80AAAD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineInventory", "OnlineInventory\OnlineInventory.csproj", "{D7548BEF-BA35-4AA0-9189-4EBB650CA797}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineInventoryLib", "OnlineInventoryLib\OnlineInventoryLib.csproj", "{F356B70F-1F0E-4652-8204-8D4FA50CFAB2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmailSender", "EmailSender\EmailSender.csproj", "{DB7A2FCE-1FB8-4762-B2DE-5F1FF9D1F578}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Notification", "Notification\Notification.csproj", "{446DE52C-D612-4D3D-869A-5C967F3D3779}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportData", "ExportData\ExportData.csproj", "{A54B8242-B845-499C-94CF-4B27E0B5D844}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrismDataProvider", "PrismDataProvider\PrismDataProvider.csproj", "{6CB1BF43-5B0B-4E7B-9ED1-D86175101F7D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineInventoryAPI", "OnlineInventoryAPI\OnlineInventoryAPI.csproj", "{B2F7266E-0F34-485E-9E16-BC0783D7660A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31703772-CA77-4099-952C-3E9B121899B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31703772-CA77-4099-952C-3E9B121899B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{120BD0FA-B0BC-4825-83AE-207E6773641D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{120BD0FA-B0BC-4825-83AE-207E6773641D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6885BA53-BC64-495D-B4DA-97D610DBE0D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6885BA53-BC64-495D-B4DA-97D610DBE0D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2B1DA74-A7EF-4A93-98A4-C7F2971AEBC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2B1DA74-A7EF-4A93-98A4-C7F2971AEBC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71094A90-AA14-42A8-8FFA-8DA0FA0EC635}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71094A90-AA14-42A8-8FFA-8DA0FA0EC635}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71094A90-AA14-42A8-8FFA-8DA0FA0EC635}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71094A90-AA14-42A8-8FFA-8DA0FA0EC635}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77E5A43D-7428-43A5-A312-62B2D4D070F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77E5A43D-7428-43A5-A312-62B2D4D070F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CCFB5D9-6D88-45A0-A79D-752824408646}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CCFB5D9-6D88-45A0-A79D-752824408646}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72EF850C-8EF5-4DAF-B9C3-936B9AE01C8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72EF850C-8EF5-4DAF-B9C3-936B9AE01C8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EBD452C-9C67-4102-97D4-03688C8B1E74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EBD452C-9C67-4102-97D4-03688C8B1E74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6A338F5-0A7C-4C04-8243-EAC304986B9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6A338F5-0A7C-4C04-8243-EAC304986B9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E93454F-4001-4F44-A9FA-790FA17E209C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E93454F-4001-4F44-A9FA-790FA17E209C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{980FB7AE-53F5-4154-87AC-4C4ECA9CC9FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{980FB7AE-53F5-4154-87AC-4C4ECA9CC9FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AE43598-7F51-47F8-82BE-4C0A2D19B5A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AE43598-7F51-47F8-82BE-4C0A2D19B5A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AE43598-7F51-47F8-82BE-4C0A2D19B5A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71D4AF16-0835-4F44-BC72-7CEBA80AAAD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71D4AF16-0835-4F44-BC72-7CEBA80AAAD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7548BEF-BA35-4AA0-9189-4EBB650CA797}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7548BEF-BA35-4AA0-9189-4EBB650CA797}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7548BEF-BA35-4AA0-9189-4EBB650CA797}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7548BEF-BA35-4AA0-9189-4EBB650CA797}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F356B70F-1F0E-4652-8204-8D4FA50CFAB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F356B70F-1F0E-4652-8204-8D4FA50CFAB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F356B70F-1F0E-4652-8204-8D4FA50CFAB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F356B70F-1F0E-4652-8204-8D4FA50CFAB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB7A2FCE-1FB8-4762-B2DE-5F1FF9D1F578}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB7A2FCE-1FB8-4762-B2DE-5F1FF9D1F578}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{446DE52C-D612-4D3D-869A-5C967F3D3779}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{446DE52C-D612-4D3D-869A-5C967F3D3779}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A54B8242-B845-499C-94CF-4B27E0B5D844}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A54B8242-B845-499C-94CF-4B27E0B5D844}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A54B8242-B845-499C-94CF-4B27E0B5D844}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CB1BF43-5B0B-4E7B-9ED1-D86175101F7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CB1BF43-5B0B-4E7B-9ED1-D86175101F7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2F7266E-0F34-485E-9E16-BC0783D7660A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2F7266E-0F34-485E-9E16-BC0783D7660A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DE17503A-C3A4-4B7D-A11D-7E5437DB231E}
+	EndGlobalSection
+EndGlobal

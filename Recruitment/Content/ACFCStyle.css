@@ -1,0 +1,58 @@
+﻿/*.bar {
+    height: 18px;
+    background: green;
+}*/
+
+.acfc-div {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.acfc-border {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+
+.table th{
+    font-size: 14px;
+}
+
+.table td{
+    font-size: 12px;
+}
+
+.editMode{
+    height: 88px;
+}
+
+/* Loading panel */
+.acfc-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    z-index: 99;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    -moz-opacity: 0.8;
+    min-height: 100%;
+    width: 100%;
+}
+
+.acfc-loading {
+    font-family: Arial;
+    font-size: 10pt;
+    border: 5px solid #67CFF5;
+    width: 200px;
+    height: 100px;
+    display: none;
+    position: fixed;
+    background-color: White;
+    z-index: 999;
+}
+
+.acfc-border {
+    border: 2px solid #ccc;
+    border-radius: 3px;
+}

@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Lazada\LazadaService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Oracle.ManagedDataAccess" Version="19.11.0" />
+    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="2.19.80" />
+    <PackageReference Include="System.Data.OleDb" Version="4.7.1" />
+    <PackageReference Include="System.Linq" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="LazopSdk">
+      <HintPath>C:\Users\NguyenAnhVu(ItSpecia\Downloads\lazop-sdk-net-20180508-1525772249562cbvf\net\LazopSdk.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+  </ItemGroup></Project>

@@ -1,0 +1,112 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Recruitment.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+
+
+    <form runat="server">
+        <asp:ScriptManager runat="server" EnablePageMethods="true">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <script>
+            var rootUrl = "<% =(Request.Url.GetLeftPart(UriPartial.Authority) + Request.ApplicationPath) %>";
+        </script>
+
+
+        <header class="navbar navbar-expand-lg navbar-light bg-light" style="padding-top: 8px;">
+            <a runat="server" class="navbar-brand" href="#">HR Web</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a runat="server" class="nav-link" href="#">Trang chủ<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a runat="server" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hồ sơ ứng viên
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a runat="server" class="dropdown-item" href="~/CandidatePool/ImportCandidates">Import danh sách ứng viên</a>
+                            <a runat="server" class="dropdown-item" href="~/CandidatePool/CandidatePool">Danh sách ứng viên</a>
+                            <div class="dropdown-divider"></div>
+                            <a runat="server" class="dropdown-item" href="~/CandidatePool/CandidateReport">Báo cáo</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a runat="server" class="nav-link dropdown-toggle" href="#" id="A1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Danh sách nhân viên
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a runat="server" class="dropdown-item" href="~/CandidatePool/EmployeeDetails">Thông tin nhân viên</a>
+                        </div>
+                    </li>
+                    <li class="nav-item active">
+                        <a runat="server" class="nav-link" href="~/About">Thông tin ứng dụng</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a runat="server" class="nav-link" href="~/Contact">Liên hệ</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="login-container form-inline" runat="server" id="loginContainer">
+                <input type="hidden" id="hdusername" runat="server" />
+                <input type="hidden" id="hdaccount" runat="server" />
+
+                <div id="divLogin" runat="server" >
+                    <input runat="server" type="text" placeholder="Tên đăng nhập" id="username" class="form-control form-control-sm" > 
+                    <input runat="server" type="password" placeholder="Mật khẩu" id="psw" class="form-control form-control-sm" >    
+                </div>
+                <asp:Button ID="Button1" class="btn btn-primary btn-sm" runat="server" Text="Đăng nhập" onclick="Button1_Click"/>
+            </div>
+        </header>
+
+
+
+
+
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <p>&copy; <%: DateTime.Now.Year %> - ACFC - HR Web Application</p>
+            </footer>
+        </div>
+
+    </form>
+</body>
+</html>

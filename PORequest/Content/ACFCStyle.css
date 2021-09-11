@@ -1,0 +1,192 @@
+﻿/*.bar {
+    height: 18px;
+    background: green;
+}*/
+
+.acfc-div {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+.acfc-border {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.table th{
+    font-size: 14px;
+}
+
+.table td{
+    font-size: 12px;
+}
+
+.editMode{
+    height: 88px;
+}
+
+/*input Number*/
+.input-number{
+    text-align: right;
+}
+
+
+/*Checkbox inline*/
+.radio input[type="radio"],
+.radio-inline input[type="radio"],
+.acfc-checkbox input[type="checkbox"],
+.acfc-checkbox-inline input[type="checkbox"] {
+    position: absolute;
+    /*margin-top: 4px \9;*/
+    margin-left: 5px;
+}
+
+.acfc-checkbox input{
+    width: 20px;
+}
+
+.acfc-checkbox-inline input {
+    width: 20px;
+    margin-top: -5px;
+}
+
+.radio + .radio,
+.checkbox + .checkbox {
+    margin-top: -5px;
+}
+
+.radio-inline,
+.checkbox-inline {
+    position: relative;
+    display: inline-block;
+    /*padding-left: 20px;*/
+    margin-bottom: 0;
+    /*font-weight: 400;*/
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.radio-inline + .radio-inline,
+.checkbox-inline + .checkbox-inline {
+    margin-top: 0;
+    margin-left: 10px;
+}
+
+/*Gridview pagination*/
+
+
+.table table tbody tr td a,
+.table table tbody tr td span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #337ab7;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.table table > tbody > tr > td > span {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+
+.table table > tbody > tr > td:first-child > a,
+.table table > tbody > tr > td:first-child > span {
+    margin-left: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+.table table > tbody > tr > td:last-child > a,
+.table table > tbody > tr > td:last-child > span {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.table table > tbody > tr > td > a:hover,
+.table table > tbody > tr > td > span:hover,
+.table table > tbody > tr > td > a:focus,
+.table table > tbody > tr > td > span:focus {
+    z-index: 2;
+    color: #23527c;
+    background-color: #eee;
+    border-color: #ddd;
+}
+
+/* Loading panel */
+.acfc-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    z-index: 99;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    -moz-opacity: 0.8;
+    min-height: 100%;
+    width: 100%;
+}
+
+.acfc-loading {
+    font-family: Arial;
+    font-size: 10pt;
+    border: 5px solid #67CFF5;
+    width: 200px;
+    height: 100px;
+    display: none;
+    position: fixed;
+    background-color: White;
+    z-index: 999;
+}
+
+
+.navbar-custom-orange {
+    background-color: #ad560b; /*#bf7627*/
+}
+
+    /* change the brand and text color */
+.navbar-custom-orange .navbar-brand,
+.navbar-custom-orange .navbar-text {
+    color: #ffffff;/*rgba(255,255,255,.8);*/
+}
+
+/* change the link color */
+.navbar-custom-orange .navbar-nav .nav-link {
+    color: rgba(255,255,255, .8);
+}
+
+/* change the color of active or hovered links */
+.navbar-custom-orange .nav-item.active .nav-link.active,
+.navbar-custom-orange .nav-item:hover .nav-link:hover  {
+    background-color: #bd923b;
+    color: black; /*rgba(255,255,255,.8);*/
+}
+
+/* for dropdown only - change the color of droodown */
+.navbar-custom-orange .dropdown-menu {
+    background-color: #ad560b;
+    color: rgba(255,255,255,.6);
+}
+
+.navbar-custom-orange .dropdown-item {
+    color: rgba(255,255,255,.8);
+}
+
+.navbar-custom-orange .dropdown-item:hover,
+.navbar-custom-orange .dropdown-item:focus {
+    color: #bd923b;
+    background-color: rgba(255,255,255,.8);
+}
+
+.require label::after {
+    content: "*";
+    font-weight: bold;
+    color: red;
+}

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <configSections>
+        <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+            <section name="OnlineInventory.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+        </sectionGroup>
+        <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+            <section name="OnlineInventory.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+        </sectionGroup>
+    </configSections>
+    <startup> 
+        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.7.2" />
+    </startup>
+    <userSettings>
+        <OnlineInventory.Properties.Settings>
+            <setting name="ShopeeSecretKey" serializeAs="String">
+                <value>d8c6555a69388b10ed98715a4c229563eb95a624b2f02969f5b361ea61e383e6</value>
+            </setting>
+            <setting name="DataSource" serializeAs="String">
+                <value>rpc.acfc.com.vn</value>
+            </setting>
+            <setting name="ShopeeDomain" serializeAs="String">
+                <value>https://partner.shopeemobile.com/api/v1</value>
+            </setting>
+            <setting name="ShopeeShopId" serializeAs="String">
+                <value>315470828</value>
+            </setting>
+            <setting name="ShopeePartnerId" serializeAs="String">
+                <value>846217</value>
+            </setting>
+            <setting name="LazadaDomain" serializeAs="String">
+                <value>https://api.lazada.vn/rest</value>
+            </setting>
+            <setting name="LazadaAppKey" serializeAs="String">
+                <value>121575</value>
+            </setting>
+            <setting name="LazadaAppSecret" serializeAs="String">
+                <value>eUJUo6ZANTcgbhvBWptubAsod8jVHAvd</value>
+            </setting>
+            <setting name="SyncTime" serializeAs="String">
+                <value>300000</value>
+            </setting>
+            <setting name="LastSyncDateTime" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="EnableShopee" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="ExcludedUPCs" serializeAs="String">
+                <value>Online\UPC.xlsx</value>
+            </setting>
+            <setting name="SendNotificationMail" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="EmailAddresses" serializeAs="String">
+                <value>tho.tran@acfc.com.vn;thi.tran@acfc.com.vn;vu.nguyen@acfc.com.vn</value>
+            </setting>
+            <setting name="UseKeepOfflineFile" serializeAs="String">
+                <value>False</value>
+            </setting>
+            <setting name="EnableLazada" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="PickupStore" serializeAs="String">
+                <value>E02</value>
+            </setting>
+            <setting name="LazadaAccessToken" serializeAs="String">
+                <value>50000501242p1cazhxjKSBRTEXiFPhNvVjnGvlxfSzoGXAvwdvWuhY1331597ccx</value>
+            </setting>
+            <setting name="LazadaRefreshToken" serializeAs="String">
+                <value>50001501542bAivdjtgURE6GCqAPRXFjFQoYFvuBE3nSPcQwyRTlni1364adb1uq</value>
+            </setting>
+            <setting name="RunAsTimer" serializeAs="String">
+                <value>True</value>
+            </setting>
+        </OnlineInventory.Properties.Settings>
+    </userSettings>
+    <applicationSettings>
+        <OnlineInventory.Properties.Settings>
+            <setting name="PageSize" serializeAs="String">
+                <value>20</value>
+            </setting>
+        </OnlineInventory.Properties.Settings>
+    </applicationSettings>
+</configuration>

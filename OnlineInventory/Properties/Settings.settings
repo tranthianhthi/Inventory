@@ -1,0 +1,84 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="OnlineInventory.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ShopeeSecretKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">d8c6555a69388b10ed98715a4c229563eb95a624b2f02969f5b361ea61e383e6</Value>
+    </Setting>
+    <Setting Name="ShopeeDomain" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://partner.shopeemobile.com/api/v1</Value>
+    </Setting>
+    <Setting Name="ShopeePartnerId" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">846217</Value>
+    </Setting>
+    <Setting Name="LazadaDomain" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://api.lazada.vn/rest</Value>
+    </Setting>
+    <Setting Name="LazadaAppKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">121575</Value>
+    </Setting>
+    <Setting Name="LazadaAppSecret" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">eUJUo6ZANTcgbhvBWptubAsod8jVHAvd</Value>
+    </Setting>
+    <Setting Name="SyncTime" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">300000</Value>
+    </Setting>
+    <Setting Name="PageSize" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="LastSyncDateTime" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SendNotificationMail" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="EmailAddresses" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">tho.tran@acfc.com.vn;thi.tran@acfc.com.vn;vu.nguyen@acfc.com.vn</Value>
+    </Setting>
+    <Setting Name="LazadaAccessToken" Type="System.String" Scope="User">
+      <Value Profile="(Default)">50000501408ck1huehTb1c85e0fe0tkYbCsgkUvjodOj2lyXCkzDsxbJr6P6IPS6</Value>
+    </Setting>
+    <Setting Name="LazadaRefreshToken" Type="System.String" Scope="User">
+      <Value Profile="(Default)">50001500810d1Nfr8hnp4r11ea1784xbYaiWcKrg0ohZiixinzwhjmKgyoQDf6TA</Value>
+    </Setting>
+    <Setting Name="RunAsTimer" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="UseKeepOfflineFile" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="UseMultiWarehouse" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="WarehouseCode" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">dropshipping</Value>
+    </Setting>
+    <Setting Name="ShopeeVariationSkuFormat" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">(UPC)</Value>
+    </Setting>
+    <Setting Name="ShopeeVariationSkuSeparator" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">_</Value>
+    </Setting>
+    <Setting Name="DataSource" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">rpc.acfc.com.vn</Value>
+    </Setting>
+    <Setting Name="ShopeeShopId" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">314282599</Value>
+    </Setting>
+    <Setting Name="EnableShopee" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ExcludedUPCs" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Online\Laz213.xlsx</Value>
+    </Setting>
+    <Setting Name="EnableLazada" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="PickupStore" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">213</Value>
+    </Setting>
+    <Setting Name="ReserveStock" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
