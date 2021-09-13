@@ -54,7 +54,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblTotalSKUs = new System.Windows.Forms.Label();
             this.diagOpenFile = new System.Windows.Forms.OpenFileDialog();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.TIKI = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.button4 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -84,15 +84,24 @@
             this.chkLazada = new System.Windows.Forms.CheckBox();
             this.chkShopee = new System.Windows.Forms.CheckBox();
             this.diagSaveFile = new System.Windows.Forms.SaveFileDialog();
+            this.chkTiki = new System.Windows.Forms.CheckBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dgTiki = new System.Windows.Forms.DataGridView();
+            this.tikiPrismUPC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tikiPrismOnhand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tikikeepoffline = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgLazada)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.TIKI.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgShopee)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgPrism)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgTiki)).BeginInit();
             this.SuspendLayout();
             // 
             // dgLazada
@@ -147,7 +156,7 @@
             // button1
             // 
             this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(347, 27);
+            this.button1.Location = new System.Drawing.Point(430, 27);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(162, 36);
             this.button1.TabIndex = 1;
@@ -246,7 +255,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(515, 69);
+            this.button2.Location = new System.Drawing.Point(598, 69);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(162, 36);
             this.button2.TabIndex = 5;
@@ -278,19 +287,20 @@
             // 
             this.diagOpenFile.Filter = "Excel Work Book | *.xlsx";
             // 
-            // tabControl1
+            // TIKI
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TIKI.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(15, 134);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(749, 452);
-            this.tabControl1.TabIndex = 10;
+            this.TIKI.Controls.Add(this.tabPage1);
+            this.TIKI.Controls.Add(this.tabPage2);
+            this.TIKI.Controls.Add(this.tabPage4);
+            this.TIKI.Controls.Add(this.tabPage3);
+            this.TIKI.Location = new System.Drawing.Point(15, 134);
+            this.TIKI.Name = "TIKI";
+            this.TIKI.SelectedIndex = 0;
+            this.TIKI.Size = new System.Drawing.Size(749, 452);
+            this.TIKI.TabIndex = 10;
             // 
             // tabPage1
             // 
@@ -517,7 +527,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(515, 27);
+            this.button3.Location = new System.Drawing.Point(598, 27);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(162, 36);
             this.button3.TabIndex = 16;
@@ -583,11 +593,75 @@
             // 
             this.diagSaveFile.DefaultExt = "xlsx";
             // 
+            // chkTiki
+            // 
+            this.chkTiki.AutoSize = true;
+            this.chkTiki.Enabled = false;
+            this.chkTiki.Location = new System.Drawing.Point(304, 54);
+            this.chkTiki.Name = "chkTiki";
+            this.chkTiki.Size = new System.Drawing.Size(43, 17);
+            this.chkTiki.TabIndex = 22;
+            this.chkTiki.Text = "Tiki";
+            this.chkTiki.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.dgTiki);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(741, 426);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "TIKI";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // dgTiki
+            // 
+            this.dgTiki.AllowUserToAddRows = false;
+            this.dgTiki.AllowUserToDeleteRows = false;
+            this.dgTiki.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgTiki.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tikiPrismUPC,
+            this.tikiPrismOnhand,
+            this.tikikeepoffline,
+            this.stock});
+            this.dgTiki.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dgTiki.Location = new System.Drawing.Point(3, 53);
+            this.dgTiki.Name = "dgTiki";
+            this.dgTiki.ReadOnly = true;
+            this.dgTiki.Size = new System.Drawing.Size(735, 370);
+            this.dgTiki.TabIndex = 0;
+            // 
+            // tikiPrismUPC
+            // 
+            this.tikiPrismUPC.HeaderText = "PrismUPC";
+            this.tikiPrismUPC.Name = "tikiPrismUPC";
+            this.tikiPrismUPC.ReadOnly = true;
+            // 
+            // tikiPrismOnhand
+            // 
+            this.tikiPrismOnhand.HeaderText = "Prism OnHand (1)";
+            this.tikiPrismOnhand.Name = "tikiPrismOnhand";
+            this.tikiPrismOnhand.ReadOnly = true;
+            // 
+            // tikikeepoffline
+            // 
+            this.tikikeepoffline.HeaderText = "Keep Offline (2)";
+            this.tikikeepoffline.Name = "tikikeepoffline";
+            this.tikikeepoffline.ReadOnly = true;
+            // 
+            // stock
+            // 
+            this.stock.HeaderText = "Tiki Stock (3 )= (1) - (2)";
+            this.stock.Name = "stock";
+            this.stock.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(776, 598);
+            this.Controls.Add(this.chkTiki);
             this.Controls.Add(this.chkShopee);
             this.Controls.Add(this.chkLazada);
             this.Controls.Add(this.lblPickupStore);
@@ -598,7 +672,7 @@
             this.Controls.Add(this.lblLastSync);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.TIKI);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
@@ -612,7 +686,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgLazada)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            this.TIKI.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -621,6 +695,8 @@
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgPrism)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgTiki)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -644,7 +720,7 @@
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem excludeUPCsToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog diagOpenFile;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl TIKI;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.DataGridView dgShopee;
@@ -680,6 +756,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ShopeePrismOnHand;
         private System.Windows.Forms.DataGridViewTextBoxColumn ShopeeKeepOffline;
         private System.Windows.Forms.DataGridViewTextBoxColumn ShopeeOnSale;
+        private System.Windows.Forms.CheckBox chkTiki;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.DataGridView dgTiki;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tikiPrismUPC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tikiPrismOnhand;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tikikeepoffline;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stock;
     }
 }
 

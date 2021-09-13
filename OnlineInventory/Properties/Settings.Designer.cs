@@ -12,7 +12,7 @@ namespace OnlineInventory.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
     public sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -234,15 +234,6 @@ namespace OnlineInventory.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Online\\Laz213.xlsx")]
-        public string ExcludedUPCs {
-            get {
-                return ((string)(this["ExcludedUPCs"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool EnableLazada {
             get {
@@ -252,7 +243,25 @@ namespace OnlineInventory.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("213")]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ReserveStock {
+            get {
+                return ((bool)(this["ReserveStock"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Online\\LazI05_06092021.xlsx")]
+        public string ExcludedUPCs {
+            get {
+                return ((string)(this["ExcludedUPCs"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("I05")]
         public string PickupStore {
             get {
                 return ((string)(this["PickupStore"]));
@@ -262,9 +271,9 @@ namespace OnlineInventory.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool ReserveStock {
+        public bool EnableTiki {
             get {
-                return ((bool)(this["ReserveStock"]));
+                return ((bool)(this["EnableTiki"]));
             }
         }
     }

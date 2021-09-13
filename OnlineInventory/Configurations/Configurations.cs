@@ -108,6 +108,14 @@ namespace OnlineInventory
             get { return Properties.Settings.Default.EnableLazada; }
             set { }
         }
+      
+
+        public bool EnableTiki
+        {
+            get { return Properties.Settings.Default.EnableTiki; }
+            set { }
+        }
+
 
 
         //public bool IsReservedStock

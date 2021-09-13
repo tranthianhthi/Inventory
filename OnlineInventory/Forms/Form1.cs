@@ -2,6 +2,7 @@
 using OnlineInventory.Dialogs;
 using OnlineInventoryLib.Lazada.Models;
 using OnlineInventoryLib.Shopee.Models;
+using OnlineInventoryLib.Tiki.Response;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,6 +40,8 @@ namespace OnlineInventory
         Configurations config;
 
         DateTime? lastSync = null;
+
+        BindingList<TikiProduct> tikiList;
 
         #endregion
 
@@ -246,12 +249,13 @@ namespace OnlineInventory
             lblPickupStore.Text = config.pickupStore;
             chkShopee.Checked = config.IsShopeeStore;
             chkLazada.Checked = config.IsLazadaStore;
+            chkTiki.Checked = config.EnableTiki;
             isLoading = true;
             timer1.Interval = config.Interval;
 
             service = new OnlineInventoryServiceV2(config, Environment.CurrentDirectory);
 
-            if (config.IsLazadaStore || config.IsShopeeStore)
+            if (config.IsLazadaStore || config.IsShopeeStore || config.EnableTiki)
             {
                 await LoadConfigAndPrepareApplication();
             }
@@ -367,7 +371,7 @@ namespace OnlineInventory
         /// </summary>
         public void DisplayDataOnGrid()
         {
-            
+
             if (config.IsLazadaStore)
             {
                 skus = new BindingList<LazadaSKU>(service.LazadaSKU);
@@ -377,6 +381,11 @@ namespace OnlineInventory
             {
                 shopeeVariations = new BindingList<ShopeeVariation>(service.ShopeeVariations);
                 dgShopee.DataSource = shopeeVariations;
+            }
+            if (config.EnableTiki)
+            {
+                tikiList = new BindingList<TikiProduct>(service.TikiProducts.ToList<TikiProduct>());
+                dgTiki.DataSource = tikiList;
             }
         }
 
@@ -390,6 +399,7 @@ namespace OnlineInventory
             dgLazada.AutoGenerateColumns = false;
             dgPrism.AutoGenerateColumns = false;
             dgShopee.AutoGenerateColumns = false;
+            dgTiki.AutoGenerateColumns = false;
 
             try
             {

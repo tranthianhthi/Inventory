@@ -9,6 +9,8 @@ using OnlineInventoryLib.Shopee;
 using OnlineInventoryLib.Shopee.Models;
 using OnlineInventoryLib.Shopee.Requests;
 using OnlineInventoryLib.Shopee.Responses;
+using OnlineInventoryLib.Tiki;
+using OnlineInventoryLib.Tiki.Response;
 using OnlineInventoryLib.Util;
 using System;
 using System.Collections.Generic;
@@ -38,6 +40,7 @@ namespace OnlineInventory
         private Online_store_Lazada lazadaAuth;
         private Online_Store_Shopee shopeeAuth;
         private readonly string executionPath;
+       
 
         /// <summary>
         /// Custom list sản phẩm & stock theo brand
@@ -75,6 +78,15 @@ namespace OnlineInventory
         //private bool LazUseMultiWarehouse = false;
 
         //private string LazWarehouseCode = "";
+
+        #region Tiki
+
+        public TikiProduct[] TikiProducts = new TikiProduct[0];
+        private Online_store_Tiki tikiAuth;
+        private ITikiService tikiService;
+
+        #endregion
+
 
 
         /// <summary>
@@ -136,6 +148,13 @@ namespace OnlineInventory
                     await InitShopee(storeAuthenticate.ShopId, storeAuthenticate.AppKey);   
                     //ShopeeVariations.RemoveAll(v => removed.Contains(v));
                 }
+
+                // khởi tạo thông tin Tiki
+                if (config.EnableTiki)
+                {
+                    await InitTiki(); // TODO: 
+                }
+
                 return true;
             }
             catch (Exception ex)
@@ -143,6 +162,138 @@ namespace OnlineInventory
                 throw;
             }
         }
+
+        #region Tiki
+        private async Task InitTiki()
+        {
+            tikiService = new TikiService(storeAuthenticate.BaseURL, storeAuthenticate.AppKey, storeAuthenticate.AppSecret);
+            tikiAuth = PrismLib.GetTikiAuthenticate(this.config.pickupStore);
+            if (tikiService.RefreshToken(tikiAuth))
+            {
+                PrismLib.UpdateAuthenticate(tikiAuth);
+            }
+
+            TikiProducts = CallTikiAPIProduct();
+
+            UpdateQtyZeroTikiSKUs();
+
+            
+        }
+
+        private void UpdateQtyZeroTikiSKUs()//bool isMultiWarehouse, string warehouseCode)
+        {
+            if (!tikiAuth.UseCustomList) return;
+
+            if (ExcelUPCs.Count <= 0) return;
+            
+            IEnumerable<TikiProduct> products = null;
+
+            products = from v in TikiProducts
+                        where !ExcelUPCs.ContainsKey(v.original_sku)
+                        select new TikiProduct()
+                        {
+                            product_id = v.product_id,
+                            original_sku = v.original_sku,
+                            NewQuantity = 0
+                        };
+
+            products = products.Where(e => e.original_sku.Length > 0);
+            CallUpdateTikiProductStock(products);
+
+
+        }
+
+        private void CallUpdateTikiProductStock(IEnumerable<TikiProduct> prods)
+        {
+            if (prods is null)
+                return;
+
+            foreach (TikiProduct prod in prods)
+            {
+                System.Diagnostics.Debug.WriteLine(prod);
+                System.Diagnostics.Debug.WriteLine(prod.NewQuantity);
+                tikiService.UpdateStock(prod);
+            }
+        }
+
+        /// <summary>
+        /// Tiki - Lấy danh sách product trên Tiki - /Products/Get
+        /// </summary>
+        /// <param name="lazFilter">filter status of products - mặc định "all"</param>
+        /// <param name="create_after">filter ngày tạo - mặc định null</param>
+        private TikiProduct[] CallTikiAPIProduct(string lazFilter = "all", DateTime? create_after = null)
+        {
+            int totalPage = 0;
+            int currentPage = 1;
+
+            try
+            {
+                TikiProduct[] tikiProducts = new TikiProduct[0];
+                Root getProductResponse = tikiService.GetProducts(tikiAuth.AccessToken, currentPage, config.PageSize.ToString(), lazFilter, create_after);
+                totalPage = getProductResponse.paging.last_page;
+
+                while (currentPage <= totalPage)//(getProductResponse.products != null && getProductResponse.products.Length > 0)
+                {
+                    tikiProducts = tikiProducts.Concat(getProductResponse.data).ToArray();
+
+                    currentPage += 1;
+
+                    if (currentPage <= totalPage)
+                        getProductResponse = tikiService.GetProducts(tikiAuth.AccessToken, currentPage, config.PageSize.ToString(), lazFilter);
+                }
+
+                return tikiProducts.Where(e => e.original_sku.Length > 0).ToArray();
+            }
+            catch { throw; }
+        }
+
+        private void UpdateTikiProductStock(IEnumerable<TikiProduct> prods, int pageSize = 50, bool isReservedStock = true)
+        {
+            try
+            {
+                Dictionary<string, int> PrismOH = GetPrismOH(null);//this.PrismLib.GetOnhands(null);
+                IEnumerable<TikiProduct> q;
+
+                if (ExcelUPCs.Count > 0)
+                {
+                    q = from v in prods
+                        where ExcelUPCs.ContainsKey(v.original_sku)
+                        select new TikiProduct()
+                        {
+                            product_id = v.product_id,
+                            original_sku = v.original_sku,
+                            OfflineQty = ExcelUPCs[v.original_sku],
+                            NewQuantity = PrismOH.ContainsKey(v.original_sku) ? (CalculateOHQty(PrismOH[v.original_sku], ExcelUPCs[v.original_sku], tikiAuth.IsReservedStock)) : 0 //isReservedStock)) : 0,
+                        };
+
+
+                }
+                else
+                {
+                    q = from v in prods
+                        select new TikiProduct()
+                        {
+                            product_id = v.product_id,
+                            original_sku = v.original_sku,
+                            OfflineQty = 0,
+                            NewQuantity = PrismOH.ContainsKey(v.original_sku) ? CalculateOHQty(PrismOH[v.original_sku], 0, tikiAuth.IsReservedStock) : 0, // isReservedStock) : 0,
+                                                                                                                                                          //stock = 0
+                        };
+
+                }
+
+                q = q.Where(e => e.original_sku.Length > 0); //BANG VU COMMENT OUT q = q.Where(e => e.NewQuantity > 0);//
+
+                CallUpdateTikiProductStock(q);
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
 
         /// <summary>
         /// Kiểm tra thông tin store có active không trên DB. Nếu store active thì lấy tiếp các thông tin cấu hình khác.
@@ -166,6 +317,10 @@ namespace OnlineInventory
                     {
 
                     }
+                }
+                if (config.EnableTiki)
+                {
+                    storeAuthenticate = PrismLib.CheckActiveTiki(this.config.pickupStore, "tiki");
                 }
 
 
@@ -284,6 +439,11 @@ namespace OnlineInventory
                 else if (this.config.EnableShopee)
                 {
                     await UpdateShopeeVariationsStock(ShopeeVariations);
+                }
+                else if (this.config.EnableTiki)
+                {
+                    UpdateTikiProductStock(TikiProducts);
+                    return;
                 }
 
             }

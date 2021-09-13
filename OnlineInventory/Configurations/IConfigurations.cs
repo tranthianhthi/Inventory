@@ -32,7 +32,8 @@ namespace OnlineInventory
 
 
         bool IsShopeeStore { get; set; }
-        bool IsLazadaStore { get; set; }
+        bool IsLazadaStore { get; set; }       
+        bool EnableTiki { get; set; }
 
         //string AccessToken { get; }
 

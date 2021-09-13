@@ -68,16 +68,19 @@
     <Setting Name="EnableShopee" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="ExcludedUPCs" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Online\Laz213.xlsx</Value>
-    </Setting>
     <Setting Name="EnableLazada" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="PickupStore" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">213</Value>
-    </Setting>
     <Setting Name="ReserveStock" Type="System.Boolean" Scope="Application">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="ExcludedUPCs" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Online\LazI05_06092021.xlsx</Value>
+    </Setting>
+    <Setting Name="PickupStore" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">I05</Value>
+    </Setting>
+    <Setting Name="EnableTiki" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
